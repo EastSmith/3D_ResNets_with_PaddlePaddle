@@ -15,7 +15,6 @@
 ### UCF-101
 
 * Download videos and train/test splits [here](http://crcv.ucf.edu/data/UCF101.php).
-* Convert from avi to jpg files using ```util_scripts/generate_video_jpgs.py```
 
 ```
 !unzip -q  /home/aistudio/data/data48916/UCF-101.zip  -d data1
