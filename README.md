@@ -11,7 +11,7 @@
 
 
 
-# **解压数据集**
+## **解压数据集**
 ### UCF-101
 
 * Download videos and train/test splits [here](http://crcv.ucf.edu/data/UCF101.php).
@@ -19,27 +19,27 @@
 ```
 !unzip -q  /home/aistudio/data/data48916/UCF-101.zip  -d data1
 ```
-# **视频抽帧**
+## **视频抽帧**
 ```
 !python avi2jpg.py
 ```
-# 按UCF101_split01划分数据集
+## 按UCF101_split01划分数据集
 ```
 !python jpg2pkl.py
 !python data_list_gener.py
 ```
-# **将pytorch权重文件文件转换成paddle的权重**
+## **将pytorch权重文件文件转换成paddle的权重**
 ```
 !python pytorch2paddle.py
 
 ```
-# **开始训练**
+## **开始训练**
 ```
-!python train.py --use_gpu True --epoch 2 --save_dir 'checkpoints_models_s0'  --pretrain True
+!python train.py --use_gpu True --epoch 2 --save_dir 'checkpoints_models'  --pretrain True
 
 ```
-# **开始评估**
+## **开始评估**
 ```
-!python eval.py --weights 'checkpoints_models_s0/res3d_model' --use_gpu True
+!python eval.py --weights 'checkpoints_models/res3d_model' --use_gpu True
 
 ```
