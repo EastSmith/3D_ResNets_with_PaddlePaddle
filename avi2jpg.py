@@ -51,5 +51,10 @@ for i in label_name:
 
             frame_count += 1
         cap.release()
-np.save('label_dir.npy', label_dir)
-print(label_dir)
+        
+if not os.path.exists('label_dir.npy') :    
+    np.save('label_dir.npy', label_dir)  ######验收的时候请勿重新生成label_dir.npy，会导致列表顺序发生变化，进而导致权重文件的准确率出现异常
+    print(label_dir)
+else:
+    label_dic = np.load('label_dir.npy', allow_pickle=True).item()
+    print(label_dic)
